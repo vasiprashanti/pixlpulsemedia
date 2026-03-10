@@ -1,12 +1,33 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useCallback } from "react";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import Marquee from "@/components/Marquee";
+import ServicesSection from "@/components/ServicesSection";
+import PlansSection from "@/components/PlansSection";
+import ProcessSection from "@/components/ProcessSection";
+import LeadCaptureForm from "@/components/LeadCaptureForm";
+import Footer from "@/components/Footer";
+import ThemeToggle from "@/components/ThemeToggle";
+import { useTheme } from "@/hooks/useTheme";
 
 const Index = () => {
+  const { isDark, toggle } = useTheme();
+
+  const scrollTo = useCallback((id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen">
+      <Navbar onScrollTo={scrollTo} />
+      <Hero onScrollTo={scrollTo} />
+      <Marquee />
+      <ServicesSection />
+      <PlansSection onScrollTo={scrollTo} />
+      <ProcessSection />
+      <LeadCaptureForm />
+      <Footer />
+      <ThemeToggle isDark={isDark} toggle={toggle} />
     </div>
   );
 };
