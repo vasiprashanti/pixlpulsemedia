@@ -23,7 +23,7 @@ const Index = () => {
       <Hero onScrollTo={scrollTo} />
       <Marquee />
       <ServicesSection />
-      <PlansSection onScrollTo={scrollTo} />
+      <PlansSection />
       <ProcessSection />
       <LeadCaptureForm />
       <Footer />
