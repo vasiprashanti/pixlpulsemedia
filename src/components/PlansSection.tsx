@@ -27,14 +27,14 @@ const PlansSection = () => {
               <ul className="mb-8">
                 {plan.features.map((f, i) => (
                   <li key={i} className="py-2 text-muted-foreground dark:text-[#bbb] text-[15px] border-b border-foreground/5 dark:border-[#333]">
-                    {f}
+                    <span className="text-primary mr-2">✓</span>{f}
                   </li>
                 ))}
               </ul>
             </div>
             <button
               onClick={() => handleGetStarted(plan.name)}
-              className="self-start py-2.5 px-[18px] bg-primary text-primary-foreground font-semibold text-[15px] transition-all hover:brightness-110 border-none cursor-pointer"
+              className="self-start py-2.5 px-[18px] bg-primary text-primary-foreground font-semibold text-[15px] transition-all hover:brightness-110 border-2 border-foreground dark:border-[#333] cursor-pointer"
             >
               Get Started →
             </button>
