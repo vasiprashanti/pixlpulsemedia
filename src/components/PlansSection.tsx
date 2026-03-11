@@ -1,10 +1,13 @@
 import { plans } from "@/data/plans";
 
-interface PlansSectionProps {
-  onScrollTo: (id: string) => void;
-}
+const PlansSection = () => {
+  const handleGetStarted = (planName: string) => {
+    const message = encodeURIComponent(
+      `Hi, I am interested in the ${planName} plan from PixelPulse Media.\n\nCan you share more details and help me get started?`
+    );
+    window.open(`https://wa.me/919849151536?text=${message}`, "_blank");
+  };
 
-const PlansSection = ({ onScrollTo }: PlansSectionProps) => {
   return (
     <section id="plans" className="bg-section py-[120px] px-[5vw]">
       <h2 className="text-primary text-[2.5rem] lg:text-[3.5rem] font-bold font-display text-left mb-[60px]">
@@ -28,7 +31,7 @@ const PlansSection = ({ onScrollTo }: PlansSectionProps) => {
               </ul>
             </div>
             <button
-              onClick={() => onScrollTo("lead-capture")}
+              onClick={() => handleGetStarted(plan.name)}
               className="self-start py-3 px-6 rounded-xl gradient-purple text-primary-foreground font-semibold transition-all hover:brightness-110"
             >
               Get Started →

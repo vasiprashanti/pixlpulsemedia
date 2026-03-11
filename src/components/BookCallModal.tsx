@@ -21,26 +21,27 @@ interface BookCallModalProps {
 }
 
 const timeOptions = ["Morning", "Afternoon", "Evening"];
+const categoryOptions = ["SEO", "Content Marketing", "Photography / Videography", "Paid Ads"];
 
 const BookCallModal = ({ open, onOpenChange }: BookCallModalProps) => {
   const [name, setName] = useState("");
-  const [business, setBusiness] = useState("");
   const [date, setDate] = useState<Date>();
   const [time, setTime] = useState("");
+  const [category, setCategory] = useState("");
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    if (!name || !business || !date || !time) return;
+    if (!name || !date || !time || !category) return;
 
     const message = encodeURIComponent(
-      `New Call Request\n\nName: ${name}\nBusiness: ${business}\nDate: ${format(date, "PPP")}\nPreferred Time: ${time}\n\nPlease schedule a call.`
+      `Hi, my name is ${name}.\n\nI am interested in your ${category} service.\n\nPreferred call date: ${format(date, "PPP")}\n\nPreferred time: ${time}\n\nCan you confirm availability?`
     );
     window.open(`https://wa.me/919849151536?text=${message}`, "_blank");
     onOpenChange(false);
     setName("");
-    setBusiness("");
     setDate(undefined);
     setTime("");
+    setCategory("");
   };
 
   const inputClass =
@@ -65,18 +66,7 @@ const BookCallModal = ({ open, onOpenChange }: BookCallModalProps) => {
           </div>
 
           <div className="flex flex-col">
-            <label className="text-sm font-semibold mb-2">Business Name *</label>
-            <input
-              type="text"
-              required
-              value={business}
-              onChange={(e) => setBusiness(e.target.value)}
-              className={inputClass}
-            />
-          </div>
-
-          <div className="flex flex-col">
-            <label className="text-sm font-semibold mb-2">Date *</label>
+            <label className="text-sm font-semibold mb-2">Preferred Call Date *</label>
             <Popover>
               <PopoverTrigger asChild>
                 <button
@@ -119,11 +109,26 @@ const BookCallModal = ({ open, onOpenChange }: BookCallModalProps) => {
             </select>
           </div>
 
+          <div className="flex flex-col">
+            <label className="text-sm font-semibold mb-2">Query Category *</label>
+            <select
+              required
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              className={inputClass}
+            >
+              <option value="">Select category</option>
+              {categoryOptions.map((c) => (
+                <option key={c} value={c}>{c}</option>
+              ))}
+            </select>
+          </div>
+
           <button
             type="submit"
             className="py-3 px-6 rounded-xl gradient-purple text-primary-foreground font-semibold transition-all hover:brightness-110 mt-2"
           >
-            Request Call
+            Connect on WhatsApp
           </button>
         </form>
       </DialogContent>
