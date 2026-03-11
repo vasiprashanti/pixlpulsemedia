@@ -28,11 +28,13 @@ const LeadCaptureForm = () => {
     e.preventDefault();
     if (!formData.name || !formData.mobile || !formData.businessName) return;
     setLoading(true);
-    // Simulate API call
     await new Promise((r) => setTimeout(r, 1000));
     setLoading(false);
     setSubmitted(true);
   };
+
+  const inputClass =
+    "py-3 px-4 border-b border-foreground/10 dark:border-[#333] bg-transparent text-foreground outline-none focus:border-primary transition-all w-full";
 
   if (submitted) {
     return (
@@ -59,7 +61,7 @@ const LeadCaptureForm = () => {
 
         <form
           onSubmit={handleSubmit}
-          className="bg-card p-8 rounded-2xl shadow-[0_6px_20px_rgba(0,0,0,0.08)] flex flex-col gap-6"
+          className="bg-card p-9 border-2 border-foreground dark:border-[#333] shadow-[8px_8px_0_rgba(0,0,0,0.12)] dark:shadow-[8px_8px_0_rgba(0,0,0,0.6)] flex flex-col gap-5 transition-all duration-300 hover:-translate-y-[6px] hover:shadow-[12px_12px_0_rgba(0,0,0,0.15)] dark:hover:shadow-[12px_12px_0_rgba(0,0,0,0.8)]"
         >
           <div className="flex flex-col">
             <label className="text-sm font-semibold mb-2">Name *</label>
@@ -69,7 +71,7 @@ const LeadCaptureForm = () => {
               maxLength={100}
               value={formData.name}
               onChange={(e) => handleChange("name", e.target.value)}
-              className="py-3 px-4 rounded-xl border border-input bg-background text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+              className={inputClass}
             />
           </div>
 
@@ -81,7 +83,7 @@ const LeadCaptureForm = () => {
               maxLength={15}
               value={formData.mobile}
               onChange={(e) => handleChange("mobile", e.target.value)}
-              className="py-3 px-4 rounded-xl border border-input bg-background text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+              className={inputClass}
             />
           </div>
 
@@ -93,7 +95,7 @@ const LeadCaptureForm = () => {
               maxLength={100}
               value={formData.businessName}
               onChange={(e) => handleChange("businessName", e.target.value)}
-              className="py-3 px-4 rounded-xl border border-input bg-background text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+              className={inputClass}
             />
           </div>
 
@@ -105,7 +107,7 @@ const LeadCaptureForm = () => {
               placeholder="you@company.com"
               value={formData.email}
               onChange={(e) => handleChange("email", e.target.value)}
-              className="py-3 px-4 rounded-xl border border-input bg-background text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+              className={inputClass}
             />
           </div>
 
@@ -116,7 +118,7 @@ const LeadCaptureForm = () => {
               maxLength={255}
               value={formData.website}
               onChange={(e) => handleChange("website", e.target.value)}
-              className="py-3 px-4 rounded-xl border border-input bg-background text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+              className={inputClass}
             />
           </div>
 
@@ -125,7 +127,7 @@ const LeadCaptureForm = () => {
             <select
               value={formData.budget}
               onChange={(e) => handleChange("budget", e.target.value)}
-              className="py-3 px-4 rounded-xl border border-input bg-background text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+              className={inputClass}
             >
               <option value="">Select a range</option>
               {budgetOptions.map((opt) => (
@@ -139,7 +141,7 @@ const LeadCaptureForm = () => {
           <button
             type="submit"
             disabled={loading}
-            className="py-3 px-6 rounded-xl gradient-purple text-primary-foreground font-semibold transition-all hover:brightness-110 disabled:opacity-50 w-full sm:w-auto"
+            className="self-start py-2.5 px-[18px] bg-primary text-primary-foreground font-semibold text-[15px] transition-all hover:brightness-110 border-none cursor-pointer disabled:opacity-50"
           >
             {loading ? "Sending..." : "Book an Intro Call →"}
           </button>
