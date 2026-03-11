@@ -47,14 +47,14 @@ const ProcessSection = () => {
           {processSteps.map((step, i) => (
             <div
               key={step.number}
-              className={`step-card-el flex-1 bg-card rounded-2xl p-8 shadow-[0_6px_20px_rgba(0,0,0,0.08)] text-left transition-all duration-300 ${
+              className={`step-card-el flex-1 bg-card p-8 border-2 border-foreground dark:border-[#333] shadow-[8px_8px_0_rgba(0,0,0,0.12)] dark:shadow-[8px_8px_0_rgba(0,0,0,0.6)] text-left transition-all duration-300 ${
                 i <= activeStep
-                  ? "opacity-100 sm:-translate-y-[5px] shadow-[0_12px_30px_rgba(0,0,0,0.12)]"
+                  ? "opacity-100 sm:-translate-y-[6px] shadow-[12px_12px_0_rgba(0,0,0,0.15)] dark:shadow-[12px_12px_0_rgba(0,0,0,0.8)]"
                   : "opacity-40 grayscale-[80%]"
               }`}
             >
-              <div className="text-primary text-[2.5rem] font-bold mb-3">{step.number}</div>
-              <div className="text-lg font-semibold mb-2">{step.title}</div>
+              <div className="text-primary text-[2.5rem] font-bold font-display mb-3">{step.number}</div>
+              <div className="text-lg font-semibold font-display mb-2 dark:text-primary">{step.title}</div>
               <div className="text-muted-foreground text-[0.95rem] leading-relaxed">{step.description}</div>
             </div>
           ))}
