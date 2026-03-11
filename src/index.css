@@ -110,6 +110,10 @@
       linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px);
     background-size: 60px 60px;
     pointer-events: none;
+    animation: gridMove 4s linear infinite;
+  }
+  .dark .grid-bg::before {
+    opacity: 0.1;
   }
   .scrollbar-none {
     scrollbar-width: none;
