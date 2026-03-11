@@ -27,7 +27,7 @@ const PlansSection = () => {
               <ul className="mb-8">
                 {plan.features.map((f, i) => (
                   <li key={i} className="py-2 text-muted-foreground dark:text-[#bbb] text-[15px] border-b border-foreground/5 dark:border-[#333]">
-                    {f}
+                    <span className="text-primary mr-2">✓</span>{f}
                   </li>
                 ))}
               </ul>
