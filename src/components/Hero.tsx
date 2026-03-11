@@ -39,7 +39,7 @@ const Hero = ({ onScrollTo }: HeroProps) => {
         </button>
         <button
           onClick={() => onScrollTo("plans")}
-          className="py-3 px-6 rounded-xl border-2 border-foreground font-semibold transition-all hover:bg-foreground hover:text-background text-center"
+          className="py-3 px-6 border-2 border-foreground dark:border-[#333] font-semibold transition-all hover:bg-foreground hover:text-background text-center"
         >
           View Case Studies
         </button>

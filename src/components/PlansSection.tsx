@@ -34,7 +34,7 @@ const PlansSection = () => {
             </div>
             <button
               onClick={() => handleGetStarted(plan.name)}
-              className="self-start py-2.5 px-[18px] bg-primary text-primary-foreground font-semibold text-[15px] transition-all hover:brightness-110 border-none cursor-pointer"
+              className="self-start py-2.5 px-[18px] bg-primary text-primary-foreground font-semibold text-[15px] transition-all hover:brightness-110 border-2 border-foreground dark:border-[#333] cursor-pointer"
             >
               Get Started →
             </button>
