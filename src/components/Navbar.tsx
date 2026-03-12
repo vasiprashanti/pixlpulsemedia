@@ -87,7 +87,6 @@ const Navbar = ({ onScrollTo }: NavbarProps) => {
         )}
       </nav>
 
-      <BookCallModal open={bookCallOpen} onOpenChange={setBookCallOpen} />
     </>
   );
 };
