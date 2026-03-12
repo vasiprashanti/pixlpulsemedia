@@ -1,17 +1,8 @@
 import { useState, FormEvent } from "react";
 import { format } from "date-fns";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Calendar } from "@/components/ui/calendar";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { CalendarIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -31,19 +22,32 @@ const BookCallModal = ({ open, onOpenChange }: BookCallModalProps) => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+
     if (!name || !date || !time || !category) return;
 
-    const message = encodeURIComponent(
-      `Hi, my name is ${name}.\n\nI am interested in your ${category} service.\n\nPreferred call date: ${format(date, "PPP")}\n\nPreferred time: ${time}\n\nCan you confirm availability?`
-    );
-    window.open(`https://wa.me/919849151536?text=${message}`, "_blank");
+    const message = `Hi, my name is ${name}.
+
+I am interested in your ${category} service.
+
+Preferred call date: ${format(date, "PPP")}
+Preferred time: ${time}
+
+Can you confirm availability?`;
+
+    const encodedMessage = encodeURIComponent(message);
+
+    // Test WhatsApp number
+    const whatsappURL = `https://wa.me/917013695672?text=${encodedMessage}`;
+
+    window.open(whatsappURL, "_blank");
+
     onOpenChange(false);
+
     setName("");
     setDate(undefined);
     setTime("");
     setCategory("");
   };
-
   const inputClass =
     "py-3 px-4 border-b border-foreground/10 dark:border-[#333] bg-transparent text-foreground outline-none focus:border-primary transition-all w-full";
 
@@ -77,7 +81,7 @@ const BookCallModal = ({ open, onOpenChange }: BookCallModalProps) => {
                     className={cn(
                       inputClass,
                       "flex items-center justify-between text-left",
-                      !date && "text-muted-foreground"
+                      !date && "text-muted-foreground",
                     )}
                   >
                     {date ? format(date, "PPP") : "Pick a date"}
@@ -99,30 +103,24 @@ const BookCallModal = ({ open, onOpenChange }: BookCallModalProps) => {
 
             <div className="flex flex-col">
               <label className="text-sm font-semibold mb-2">Preferred Time *</label>
-              <select
-                required
-                value={time}
-                onChange={(e) => setTime(e.target.value)}
-                className={inputClass}
-              >
+              <select required value={time} onChange={(e) => setTime(e.target.value)} className={inputClass}>
                 <option value="">Select time</option>
                 {timeOptions.map((t) => (
-                  <option key={t} value={t}>{t}</option>
+                  <option key={t} value={t}>
+                    {t}
+                  </option>
                 ))}
               </select>
             </div>
 
             <div className="flex flex-col">
               <label className="text-sm font-semibold mb-2">Query Category *</label>
-              <select
-                required
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}
-                className={inputClass}
-              >
+              <select required value={category} onChange={(e) => setCategory(e.target.value)} className={inputClass}>
                 <option value="">Select category</option>
                 {categoryOptions.map((c) => (
-                  <option key={c} value={c}>{c}</option>
+                  <option key={c} value={c}>
+                    {c}
+                  </option>
                 ))}
               </select>
             </div>
