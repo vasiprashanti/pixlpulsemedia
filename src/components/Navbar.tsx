@@ -55,12 +55,14 @@ const Navbar = ({ onScrollTo }: NavbarProps) => {
           </button>
         </div>
 
-        <button
-          onClick={() => setBookCallOpen(true)}
+        <a
+          href="https://wa.me/919849151536?text=Hi%2C%20I%20wanted%20to%20know%20about%20your%20Marketing%20Services."
+          target="_blank"
+          rel="noopener noreferrer"
           className="hidden md:block py-[0.8vh] px-[2vw] rounded-xl gradient-purple text-primary-foreground font-semibold transition-all hover:brightness-110"
         >
-          Book a Call
-        </button>
+          Get Started
+        </a>
 
         <button className="md:hidden text-2xl" onClick={() => setMobileOpen(!mobileOpen)}>
           {mobileOpen ? <X /> : <Menu />}
