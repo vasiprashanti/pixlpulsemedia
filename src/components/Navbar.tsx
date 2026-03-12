@@ -1,7 +1,6 @@
 import { useState, useCallback } from "react";
 import { Menu, X } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
-import BookCallModal from "./BookCallModal";
 
 interface NavbarProps {
   onScrollTo?: (id: string) => void;
