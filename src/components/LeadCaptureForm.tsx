@@ -18,25 +18,24 @@ const LeadCaptureForm = () => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setLoading(true);
 
-    const formData = {
-      name: name,
-      email: email,
-      phone: phone,
-      message: message,
-    };
-
-    await fetch(
-      "https://script.google.com/macros/s/AKfycby9q_Q9rJq3zCW2-T1bIvXrP6Tm01O_uVDOnd5qOEhu7aS3_mrjKFrPSSu1fqwgZr4plg/exec",
-      {
-        method: "POST",
-        body: JSON.stringify(formData),
-      },
-    );
-
-    alert("Thank you! Our team will contact you soon.");
+    try {
+      await fetch(
+        "https://script.google.com/macros/s/AKfycby9q_Q9rJq3zCW2-T1bIvXrP6Tm01O_uVDOnd5qOEhu7aS3_mrjKFrPSSu1fqwgZr4plg/exec",
+        {
+          method: "POST",
+          body: JSON.stringify(formData),
+        },
+      );
+      setSubmitted(true);
+    } catch {
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputClass =
