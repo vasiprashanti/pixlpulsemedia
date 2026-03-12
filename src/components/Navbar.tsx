@@ -8,7 +8,6 @@ interface NavbarProps {
 
 const Navbar = ({ onScrollTo }: NavbarProps) => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [bookCallOpen, setBookCallOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
