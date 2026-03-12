@@ -57,7 +57,7 @@ const Navbar = ({ onScrollTo }: NavbarProps) => {
           href="https://wa.me/919849151536?text=Hi%2C%20I%20wanted%20to%20know%20about%20your%20Marketing%20Services."
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:block py-[0.8vh] px-[2vw] rounded-xl gradient-purple text-primary-foreground font-semibold transition-all hover:brightness-110"
+          className="hidden md:block py-3 px-6 gradient-purple text-primary-foreground font-semibold transition-all hover:brightness-110 border-2 border-foreground dark:border-[#333]"
         >
           Get Started
         </a>
@@ -78,7 +78,7 @@ const Navbar = ({ onScrollTo }: NavbarProps) => {
               href="https://wa.me/919849151536?text=Hi%2C%20I%20wanted%20to%20know%20about%20your%20Marketing%20Services."
               target="_blank"
               rel="noopener noreferrer"
-              className="py-2 px-4 rounded-xl gradient-purple text-primary-foreground font-semibold text-center"
+              className="py-3 px-6 gradient-purple text-primary-foreground font-semibold text-center transition-all hover:brightness-110 border-2 border-foreground dark:border-[#333]"
               onClick={() => setMobileOpen(false)}
             >
               Get Started
