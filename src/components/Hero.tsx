@@ -37,6 +37,12 @@ const Hero = ({ onScrollTo }: HeroProps) => {
         >
           View Plans
         </button>
+        <button
+          onClick={() => onScrollTo("services")}
+          className="py-3 px-6 border-2 border-foreground dark:border-[#333] font-semibold transition-all hover:bg-foreground hover:text-background text-center"
+        >
+          View Services
+        </button>
       </div>
     </section>
   );
