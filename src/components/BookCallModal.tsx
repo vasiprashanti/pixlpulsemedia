@@ -36,10 +36,10 @@ Can you confirm availability?`;
 
     const encodedMessage = encodeURIComponent(message);
 
-    // Test WhatsApp number
+    // Correct WhatsApp URL
     const whatsappURL = `https://wa.me/917013695672?text=${encodedMessage}`;
 
-    window.open(whatsappURL, "_blank");
+    window.open(whatsappURL, "_blank", "noopener,noreferrer");
 
     onOpenChange(false);
 
