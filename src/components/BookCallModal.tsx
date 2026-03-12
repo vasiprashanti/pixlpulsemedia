@@ -34,15 +34,11 @@ Preferred time: ${time}
 
 Can you confirm availability?`;
 
-    const encodedMessage = encodeURIComponent(message);
-
-    // Correct WhatsApp URL
-    const whatsappURL = `https://wa.me/917013695672?text=${encodedMessage}`;
+    const whatsappURL = `https://wa.me/917013695672?text=${encodeURIComponent(message)}`;
 
     window.open(whatsappURL, "_blank", "noopener,noreferrer");
 
     onOpenChange(false);
-
     setName("");
     setDate(undefined);
     setTime("");
