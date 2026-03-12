@@ -32,16 +32,10 @@ const Hero = ({ onScrollTo }: HeroProps) => {
       </p>
       <div className="hero-cta flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
         <button
-          onClick={() => onScrollTo("lead-capture")}
+          onClick={() => onScrollTo("plans")}
           className="py-3 px-6 gradient-purple text-primary-foreground font-semibold transition-all hover:brightness-110 text-center border-2 border-foreground dark:border-[#333]"
         >
-          Get Started
-        </button>
-        <button
-          onClick={() => onScrollTo("plans")}
-          className="py-3 px-6 border-2 border-foreground dark:border-[#333] font-semibold transition-all hover:bg-foreground hover:text-background text-center"
-        >
-          View Case Studies
+          View Plans
         </button>
       </div>
     </section>

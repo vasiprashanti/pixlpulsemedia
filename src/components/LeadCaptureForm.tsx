@@ -148,7 +148,7 @@ const LeadCaptureForm = () => {
             disabled={loading}
             className="self-start py-2.5 px-[18px] bg-primary text-primary-foreground font-semibold text-[15px] transition-all hover:brightness-110 border-none cursor-pointer disabled:opacity-50"
           >
-            {loading ? "Sending..." : "Book an Intro Call →"}
+            {loading ? "Sending..." : "Request a Callback →"}
           </button>
         </form>
       </div>

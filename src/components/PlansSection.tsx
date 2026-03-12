@@ -3,7 +3,7 @@ import { plans } from "@/data/plans";
 const PlansSection = () => {
   const handleGetStarted = (planName: string) => {
     const message = encodeURIComponent(
-      `Hi, I am interested in the ${planName} plan from PixelPulse Media.\n\nCan you share more details and help me get started?`
+      `Hi, I wanted to know about your ${planName} plan.`
     );
     window.open(`https://wa.me/919849151536?text=${message}`, "_blank");
   };

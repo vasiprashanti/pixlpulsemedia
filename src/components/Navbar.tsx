@@ -1,7 +1,6 @@
 import { useState, useCallback } from "react";
 import { Menu, X } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
-import BookCallModal from "./BookCallModal";
 
 interface NavbarProps {
   onScrollTo?: (id: string) => void;
@@ -9,7 +8,6 @@ interface NavbarProps {
 
 const Navbar = ({ onScrollTo }: NavbarProps) => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [bookCallOpen, setBookCallOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -55,12 +53,14 @@ const Navbar = ({ onScrollTo }: NavbarProps) => {
           </button>
         </div>
 
-        <button
-          onClick={() => setBookCallOpen(true)}
+        <a
+          href="https://wa.me/919849151536?text=Hi%2C%20I%20wanted%20to%20know%20about%20your%20Marketing%20Services."
+          target="_blank"
+          rel="noopener noreferrer"
           className="hidden md:block py-[0.8vh] px-[2vw] rounded-xl gradient-purple text-primary-foreground font-semibold transition-all hover:brightness-110"
         >
-          Book a Call
-        </button>
+          Get Started
+        </a>
 
         <button className="md:hidden text-2xl" onClick={() => setMobileOpen(!mobileOpen)}>
           {mobileOpen ? <X /> : <Menu />}
@@ -74,17 +74,19 @@ const Navbar = ({ onScrollTo }: NavbarProps) => {
             <button onClick={handleAbout} className="text-left hover:text-primary">
               About Us
             </button>
-            <button
-              onClick={() => { setBookCallOpen(true); setMobileOpen(false); }}
-              className="py-2 px-4 rounded-xl gradient-purple text-primary-foreground font-semibold"
+            <a
+              href="https://wa.me/919849151536?text=Hi%2C%20I%20wanted%20to%20know%20about%20your%20Marketing%20Services."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="py-2 px-4 rounded-xl gradient-purple text-primary-foreground font-semibold text-center"
+              onClick={() => setMobileOpen(false)}
             >
-              Book a Call
-            </button>
+              Get Started
+            </a>
           </div>
         )}
       </nav>
 
-      <BookCallModal open={bookCallOpen} onOpenChange={setBookCallOpen} />
     </>
   );
 };
