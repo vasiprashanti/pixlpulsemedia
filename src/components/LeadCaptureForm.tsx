@@ -1,12 +1,6 @@
 import { useState, FormEvent } from "react";
 
-const budgetOptions = [
-  "₹1,000 – ₹5,000",
-  "₹5,000 – ₹10,000",
-  "₹10,000 – ₹25,000",
-  "₹50,000 – ₹1,00,000",
-  "₹5,00,000+",
-];
+const budgetOptions = ["₹1,000 – ₹5,000", "₹5,000 – ₹10,000", "₹10,000 – ₹25,000", "₹50,000 – ₹1,00,000", "₹5,00,000+"];
 
 const LeadCaptureForm = () => {
   const [formData, setFormData] = useState({
@@ -24,13 +18,25 @@ const LeadCaptureForm = () => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.name || !formData.mobile || !formData.businessName) return;
-    setLoading(true);
-    await new Promise((r) => setTimeout(r, 1000));
-    setLoading(false);
-    setSubmitted(true);
+
+    const formData = {
+      name: name,
+      email: email,
+      phone: phone,
+      message: message,
+    };
+
+    await fetch(
+      "https://script.google.com/macros/s/AKfycby9q_Q9rJq3zCW2-T1bIvXrP6Tm01O_uVDOnd5qOEhu7aS3_mrjKFrPSSu1fqwgZr4plg/exec",
+      {
+        method: "POST",
+        body: JSON.stringify(formData),
+      },
+    );
+
+    alert("Thank you! Our team will contact you soon.");
   };
 
   const inputClass =
