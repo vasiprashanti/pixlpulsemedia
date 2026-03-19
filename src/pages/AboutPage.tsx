@@ -15,10 +15,10 @@ import audienceBehaviorImg from "@/assets/about-audience-behavior.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const pillars = [
-  { icon: Eye, title: "Creative Visuals", desc: "Designs that capture attention and communicate your brand identity." },
-  { icon: Lightbulb, title: "Strategic Thinking", desc: "Data-backed strategies aligned with your business goals." },
-  { icon: BarChart3, title: "Data Insights", desc: "Analytics that reveal what works and what to optimize." },
-  { icon: Users, title: "Audience Behavior", desc: "Understanding why people engage, click, and convert." },
+  { image: creativeVisualsImg, title: "Creative Visuals" },
+  { image: strategicThinkingImg, title: "Strategic Thinking" },
+  { image: dataInsightsImg, title: "Data Insights" },
+  { image: audienceBehaviorImg, title: "Audience Behavior" },
 ];
 
 const AboutPage = () => {
