@@ -3,17 +3,22 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ThemeToggle from "@/components/ThemeToggle";
 import { useTheme } from "@/hooks/useTheme";
-import { ChevronDown, Eye, Lightbulb, BarChart3, Users } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+import creativeVisualsImg from "@/assets/about-creative-visuals.png";
+import strategicThinkingImg from "@/assets/about-strategic-thinking.png";
+import dataInsightsImg from "@/assets/about-data-insights.png";
+import audienceBehaviorImg from "@/assets/about-audience-behavior.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const pillars = [
-  { icon: Eye, title: "Creative Visuals", desc: "Designs that capture attention and communicate your brand identity." },
-  { icon: Lightbulb, title: "Strategic Thinking", desc: "Data-backed strategies aligned with your business goals." },
-  { icon: BarChart3, title: "Data Insights", desc: "Analytics that reveal what works and what to optimize." },
-  { icon: Users, title: "Audience Behavior", desc: "Understanding why people engage, click, and convert." },
+  { image: creativeVisualsImg, title: "Creative Visuals" },
+  { image: strategicThinkingImg, title: "Strategic Thinking" },
+  { image: dataInsightsImg, title: "Data Insights" },
+  { image: audienceBehaviorImg, title: "Audience Behavior" },
 ];
 
 const AboutPage = () => {
@@ -186,21 +191,24 @@ const AboutPage = () => {
             </p>
           </div>
 
-          <div className="reveal-section">
-            <p className="text-muted-foreground text-base sm:text-lg mb-6">We combine:</p>
-          </div>
         </div>
 
-        {/* Pillar Grid */}
-        <div className="pillars-grid max-w-[900px] mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
+        {/* We Combine Grid — matches Plans card styling */}
+        <h2 className="text-primary text-[2.5rem] lg:text-[3.5rem] font-bold font-display text-left max-w-[900px] mx-auto mb-[60px] mt-4">
+          We combine
+        </h2>
+        <div className="pillars-grid max-w-[900px] mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-10">
           {pillars.map((p) => (
             <div
               key={p.title}
-              className="pillar-card bg-card border-2 border-foreground dark:border-[hsl(0,0%,20%)] p-8 transition-all hover:-translate-y-1 hover:shadow-[8px_8px_0_rgba(0,0,0,0.12)] dark:hover:shadow-[8px_8px_0_rgba(0,0,0,0.6)]"
+              className="pillar-card flex-1 flex flex-col items-center bg-card p-9 border-2 border-foreground dark:border-[#333] shadow-[8px_8px_0_rgba(0,0,0,0.12)] dark:shadow-[8px_8px_0_rgba(0,0,0,0.6)] transition-all duration-300 hover:-translate-y-[6px] hover:shadow-[12px_12px_0_rgba(0,0,0,0.15)] dark:hover:shadow-[12px_12px_0_rgba(0,0,0,0.8)]"
             >
-              <p.icon className="w-7 h-7 text-primary mb-4" />
-              <h3 className="font-display text-lg font-bold mb-2">{p.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{p.desc}</p>
+              <div className="w-20 h-20 mb-6 flex items-center justify-center">
+                <img src={p.image} alt={p.title} className="w-full h-full object-contain dark:invert" />
+              </div>
+              <h3 className="text-primary text-[1.4rem] font-display font-bold text-center border-t border-foreground/10 dark:border-[#333] pt-4 w-full">
+                {p.title}
+              </h3>
             </div>
           ))}
         </div>
