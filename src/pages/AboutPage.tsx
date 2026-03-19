@@ -118,19 +118,20 @@ const AboutPage = () => {
             </p>
           </div>
 
-          <div className="reveal-stagger space-y-4">
-            <p className="stagger-line text-muted-foreground text-base sm:text-lg">
-              So we decided to look deeper.
-            </p>
-            <p className="stagger-line text-foreground text-lg sm:text-xl font-medium">
-              What makes people stop scrolling?
-            </p>
-            <p className="stagger-line text-foreground text-lg sm:text-xl font-medium">
-              What makes them remember a brand?
-            </p>
-            <p className="stagger-line text-foreground text-lg sm:text-xl font-medium">
-              What makes attention turn into growth?
-            </p>
+          {/* iMessage-style chat bubbles */}
+          <div className="chat-bubbles space-y-5 max-w-[500px]">
+            <div className="chat-bubble bg-card border-2 border-foreground dark:border-[#333] rounded-2xl rounded-bl-sm px-5 py-4 shadow-[4px_4px_0_rgba(0,0,0,0.08)] dark:shadow-[4px_4px_0_rgba(0,0,0,0.4)] w-fit max-w-[85%]">
+              <p className="text-muted-foreground text-base sm:text-lg">So we decided to look deeper.</p>
+            </div>
+            <div className="chat-bubble bg-card border-2 border-foreground dark:border-[#333] rounded-2xl rounded-bl-sm px-5 py-4 shadow-[4px_4px_0_rgba(0,0,0,0.08)] dark:shadow-[4px_4px_0_rgba(0,0,0,0.4)] w-fit max-w-[85%]">
+              <p className="text-foreground text-lg sm:text-xl font-medium">What makes people stop scrolling?</p>
+            </div>
+            <div className="chat-bubble bg-card border-2 border-foreground dark:border-[#333] rounded-2xl rounded-bl-sm px-5 py-4 shadow-[4px_4px_0_rgba(0,0,0,0.08)] dark:shadow-[4px_4px_0_rgba(0,0,0,0.4)] w-fit max-w-[85%]">
+              <p className="text-foreground text-lg sm:text-xl font-medium">What makes them remember a brand?</p>
+            </div>
+            <div className="chat-bubble gradient-purple border-2 border-foreground dark:border-[#333] rounded-2xl rounded-bl-sm px-5 py-4 shadow-[6px_6px_0_rgba(0,0,0,0.12)] dark:shadow-[6px_6px_0_rgba(0,0,0,0.6)] w-fit max-w-[85%]">
+              <p className="text-primary-foreground text-lg sm:text-xl font-bold">What makes attention turn into growth?</p>
+            </div>
           </div>
 
           <div className="reveal-section">
