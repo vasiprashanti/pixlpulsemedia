@@ -54,6 +54,16 @@ const AboutPage = () => {
         });
       });
 
+      // Chat bubbles — each reveals individually on scroll
+      gsap.utils.toArray<HTMLElement>(".chat-bubble").forEach((bubble) => {
+        gsap.from(bubble, {
+          scrollTrigger: { trigger: bubble, start: "top 88%" },
+          opacity: 0,
+          y: 30,
+          duration: 0.5,
+        });
+      });
+
       // Big insight text
       gsap.from(".insight-text", {
         scrollTrigger: { trigger: ".insight-text", start: "top 80%", end: "top 40%", scrub: true },
