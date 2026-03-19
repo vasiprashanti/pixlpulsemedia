@@ -200,16 +200,13 @@ const AboutPage = () => {
           We combine
         </h2>
         <div className="pillars-grid max-w-[900px] mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-10">
-          {pillars.map((p) => (
+          {pillars.map((title) => (
             <div
-              key={p.title}
-              className="pillar-card flex-1 flex flex-col items-center bg-card p-9 border-2 border-foreground dark:border-[#333] shadow-[8px_8px_0_rgba(0,0,0,0.12)] dark:shadow-[8px_8px_0_rgba(0,0,0,0.6)] transition-all duration-300 hover:-translate-y-[6px] hover:shadow-[12px_12px_0_rgba(0,0,0,0.15)] dark:hover:shadow-[12px_12px_0_rgba(0,0,0,0.8)]"
+              key={title}
+              className="pillar-card flex items-center justify-center bg-card p-9 border-2 border-foreground dark:border-[#333] shadow-[8px_8px_0_rgba(0,0,0,0.12)] dark:shadow-[8px_8px_0_rgba(0,0,0,0.6)] transition-all duration-300 hover:-translate-y-[6px] hover:shadow-[12px_12px_0_rgba(0,0,0,0.15)] dark:hover:shadow-[12px_12px_0_rgba(0,0,0,0.8)]"
             >
-              <div className="w-20 h-20 mb-6 flex items-center justify-center">
-                <img src={p.image} alt={p.title} className="w-full h-full object-contain dark:invert" />
-              </div>
-              <h3 className="text-primary text-[1.4rem] font-display font-bold text-center border-t border-foreground/10 dark:border-[#333] pt-4 w-full">
-                {p.title}
+              <h3 className="text-primary text-[1.4rem] font-display font-bold text-center">
+                {title}
               </h3>
             </div>
           ))}
