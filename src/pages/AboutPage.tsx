@@ -3,9 +3,14 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ThemeToggle from "@/components/ThemeToggle";
 import { useTheme } from "@/hooks/useTheme";
-import { ChevronDown, Eye, Lightbulb, BarChart3, Users } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+import creativeVisualsImg from "@/assets/about-creative-visuals.png";
+import strategicThinkingImg from "@/assets/about-strategic-thinking.png";
+import dataInsightsImg from "@/assets/about-data-insights.png";
+import audienceBehaviorImg from "@/assets/about-audience-behavior.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
