@@ -7,18 +7,9 @@ import { ChevronDown } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import creativeVisualsImg from "@/assets/about-creative-visuals.png";
-import strategicThinkingImg from "@/assets/about-strategic-thinking.png";
-import dataInsightsImg from "@/assets/about-data-insights.png";
-import audienceBehaviorImg from "@/assets/about-audience-behavior.png";
-
 gsap.registerPlugin(ScrollTrigger);
 
-const pillars = [
-  { image: creativeVisualsImg, title: "Creative Visuals" },
-  { image: strategicThinkingImg, title: "Strategic Thinking" },
-  { image: dataInsightsImg, title: "Data Insights" },
-  { image: audienceBehaviorImg, title: "Audience Behavior" },
+const pillars = ["Creative Visuals", "Strategic Thinking", "Data Insights", "Audience Behavior"];
 ];
 
 const AboutPage = () => {
