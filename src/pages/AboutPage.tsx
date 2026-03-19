@@ -7,19 +7,9 @@ import { ChevronDown } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import creativeVisualsImg from "@/assets/about-creative-visuals.png";
-import strategicThinkingImg from "@/assets/about-strategic-thinking.png";
-import dataInsightsImg from "@/assets/about-data-insights.png";
-import audienceBehaviorImg from "@/assets/about-audience-behavior.png";
-
 gsap.registerPlugin(ScrollTrigger);
 
-const pillars = [
-  { image: creativeVisualsImg, title: "Creative Visuals" },
-  { image: strategicThinkingImg, title: "Strategic Thinking" },
-  { image: dataInsightsImg, title: "Data Insights" },
-  { image: audienceBehaviorImg, title: "Audience Behavior" },
-];
+const pillars = ["Creative Visuals", "Strategic Thinking", "Data Insights", "Audience Behavior"];
 
 const AboutPage = () => {
   const { isDark, toggle } = useTheme();
@@ -209,16 +199,13 @@ const AboutPage = () => {
           We combine
         </h2>
         <div className="pillars-grid max-w-[900px] mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-10">
-          {pillars.map((p) => (
+          {pillars.map((title) => (
             <div
-              key={p.title}
-              className="pillar-card flex-1 flex flex-col items-center bg-card p-9 border-2 border-foreground dark:border-[#333] shadow-[8px_8px_0_rgba(0,0,0,0.12)] dark:shadow-[8px_8px_0_rgba(0,0,0,0.6)] transition-all duration-300 hover:-translate-y-[6px] hover:shadow-[12px_12px_0_rgba(0,0,0,0.15)] dark:hover:shadow-[12px_12px_0_rgba(0,0,0,0.8)]"
+              key={title}
+              className="pillar-card flex items-center justify-center bg-card p-9 border-2 border-foreground dark:border-[#333] shadow-[8px_8px_0_rgba(0,0,0,0.12)] dark:shadow-[8px_8px_0_rgba(0,0,0,0.6)] transition-all duration-300 hover:-translate-y-[6px] hover:shadow-[12px_12px_0_rgba(0,0,0,0.15)] dark:hover:shadow-[12px_12px_0_rgba(0,0,0,0.8)]"
             >
-              <div className="w-20 h-20 mb-6 flex items-center justify-center">
-                <img src={p.image} alt={p.title} className="w-full h-full object-contain dark:invert" />
-              </div>
-              <h3 className="text-primary text-[1.4rem] font-display font-bold text-center border-t border-foreground/10 dark:border-[#333] pt-4 w-full">
-                {p.title}
+              <h3 className="text-primary text-[1.4rem] font-display font-bold text-center">
+                {title}
               </h3>
             </div>
           ))}
