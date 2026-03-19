@@ -10,7 +10,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const pillars = ["Creative Visuals", "Strategic Thinking", "Data Insights", "Audience Behavior"];
-];
 
 const AboutPage = () => {
   const { isDark, toggle } = useTheme();
