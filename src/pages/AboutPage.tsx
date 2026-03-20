@@ -171,46 +171,18 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* ── Continue Story ── */}
-      <section className="py-[12vh] px-[5vw]">
-        <div className="max-w-[700px] mx-auto space-y-16">
-
-          <div className="reveal-section">
-            <p className="text-primary text-xl sm:text-2xl font-display font-bold">
-              That curiosity led to PixelPulse Media.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Building ── */}
-      <section className="py-[10vh] px-[5vw] bg-section">
-        <div className="max-w-[700px] mx-auto space-y-12">
-          <div className="reveal-section">
-            <p className="text-muted-foreground text-base sm:text-lg italic">
-              Fueled by creativity and constant learning
-            </p>
-            <p className="text-foreground text-2xl sm:text-3xl font-display font-bold mt-2">
-              We started building.
-            </p>
-          </div>
-
-          <div className="reveal-stagger space-y-3">
-            <p className="stagger-line text-muted-foreground text-lg">Not just campaigns.</p>
-            <p className="stagger-line text-muted-foreground text-lg">Not just posts.</p>
-          </div>
-
-          <div className="reveal-section">
-            <p className="text-foreground text-lg sm:text-xl leading-relaxed">
-              But <span className="font-semibold">visual identity</span>, <span className="font-semibold">digital presence</span>, and <span className="font-semibold">brand momentum</span>.
-            </p>
-          </div>
-
-          <div className="reveal-section">
-            <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
-              We explored industries, studied markets, observed audience behavior, and understood one powerful thing:
-            </p>
-          </div>
+      {/* ── Story Continues ── */}
+      <section className="py-[12vh] px-[5vw] bg-section">
+        <div className="max-w-[700px] mx-auto reveal-section space-y-6">
+          <h2 className="font-display text-[2rem] sm:text-[3rem] font-bold text-primary leading-[1.15]">
+            That curiosity led to PixelPulse Media
+          </h2>
+          <p className="text-muted-foreground text-base sm:text-lg italic">
+            Fueled by creativity and constant learning
+          </p>
+          <p className="text-foreground text-base sm:text-lg leading-relaxed">
+            We started building—not just campaigns, not just posts, but <span className="font-semibold">visual identity</span>, <span className="font-semibold">digital presence</span>, and <span className="font-semibold">brand momentum</span>. We explored industries, studied markets, observed audience behavior, and understood one powerful thing:
+          </p>
         </div>
       </section>
 
