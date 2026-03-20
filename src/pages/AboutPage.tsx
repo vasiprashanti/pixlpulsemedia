@@ -44,14 +44,37 @@ const AboutPage = () => {
         });
       });
 
-      // Chat bubbles — each reveals individually on scroll
-      gsap.utils.toArray<HTMLElement>(".chat-bubble").forEach((bubble) => {
-        gsap.from(bubble, {
-          scrollTrigger: { trigger: bubble, start: "top 88%" },
-          opacity: 0,
-          y: 30,
-          duration: 0.5,
-        });
+      // Curiosity section heading
+      gsap.from(".curiosity-heading", {
+        scrollTrigger: { trigger: ".curiosity-section", start: "top 60%" },
+        opacity: 0,
+        y: 40,
+        duration: 0.8,
+      });
+      gsap.from(".curiosity-sub", {
+        scrollTrigger: { trigger: ".curiosity-section", start: "top 55%" },
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        delay: 0.3,
+      });
+
+      // Floating chat bubbles — staggered pop-in
+      gsap.set(".floating-bubble", { opacity: 0, y: 80, scale: 0.8 });
+      ScrollTrigger.create({
+        trigger: ".curiosity-section",
+        start: "top 40%",
+        onEnter: () => {
+          gsap.to(".floating-bubble", {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            stagger: 0.35,
+            duration: 0.6,
+            ease: "back.out(1.4)",
+          });
+        },
+        once: true,
       });
 
       // Big insight text
@@ -126,21 +149,40 @@ const AboutPage = () => {
             </p>
           </div>
 
-          {/* iMessage-style chat bubbles */}
-          <div className="chat-bubbles space-y-5 max-w-[500px]">
-            <div className="chat-bubble bg-card border-2 border-foreground dark:border-[#333] rounded-2xl rounded-bl-sm px-5 py-4 shadow-[4px_4px_0_rgba(0,0,0,0.08)] dark:shadow-[4px_4px_0_rgba(0,0,0,0.4)] w-fit max-w-[85%]">
-              <p className="text-muted-foreground text-base sm:text-lg">So we decided to look deeper.</p>
-            </div>
-            <div className="chat-bubble bg-card border-2 border-foreground dark:border-[#333] rounded-2xl rounded-bl-sm px-5 py-4 shadow-[4px_4px_0_rgba(0,0,0,0.08)] dark:shadow-[4px_4px_0_rgba(0,0,0,0.4)] w-fit max-w-[85%]">
-              <p className="text-foreground text-lg sm:text-xl font-medium">What makes people stop scrolling?</p>
-            </div>
-            <div className="chat-bubble bg-card border-2 border-foreground dark:border-[#333] rounded-2xl rounded-bl-sm px-5 py-4 shadow-[4px_4px_0_rgba(0,0,0,0.08)] dark:shadow-[4px_4px_0_rgba(0,0,0,0.4)] w-fit max-w-[85%]">
-              <p className="text-foreground text-lg sm:text-xl font-medium">What makes them remember a brand?</p>
-            </div>
-            <div className="chat-bubble gradient-purple border-2 border-foreground dark:border-[#333] rounded-2xl rounded-bl-sm px-5 py-4 shadow-[6px_6px_0_rgba(0,0,0,0.12)] dark:shadow-[6px_6px_0_rgba(0,0,0,0.6)] w-fit max-w-[85%]">
-              <p className="text-primary-foreground text-lg sm:text-xl font-bold">What makes attention turn into growth?</p>
-            </div>
+        </div>
+      </section>
+
+      {/* ── Curiosity Section ── */}
+      <section className="curiosity-section relative min-h-screen flex items-center justify-center px-[5vw] grid-bg overflow-hidden">
+        <div className="text-center z-10">
+          <h2 className="curiosity-heading font-display text-[2rem] sm:text-[3rem] lg:text-[3.5rem] font-bold leading-[1.15]">
+            Everyone is Creating Content
+          </h2>
+          <p className="curiosity-sub text-muted-foreground text-lg sm:text-xl mt-4">
+            But we were curious…
+          </p>
+        </div>
+
+        {/* Floating bubbles */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="floating-bubble absolute top-[15%] left-[6%] sm:left-[10%] max-w-[220px] sm:max-w-[260px] bg-card border-2 border-foreground dark:border-[#333] rounded-2xl px-5 py-4 shadow-[4px_4px_0_rgba(0,0,0,0.08)] dark:shadow-[4px_4px_0_rgba(0,0,0,0.4)]">
+            <p className="text-muted-foreground text-sm sm:text-base">But we were curious…</p>
           </div>
+          <div className="floating-bubble absolute bottom-[20%] left-[8%] sm:left-[18%] max-w-[220px] sm:max-w-[260px] bg-card border-2 border-foreground dark:border-[#333] rounded-2xl px-5 py-4 shadow-[4px_4px_0_rgba(0,0,0,0.08)] dark:shadow-[4px_4px_0_rgba(0,0,0,0.4)]">
+            <p className="text-foreground text-sm sm:text-base font-medium">What makes people stop scrolling?</p>
+          </div>
+          <div className="floating-bubble absolute top-[22%] right-[6%] sm:right-[12%] max-w-[220px] sm:max-w-[260px] bg-card border-2 border-foreground dark:border-[#333] rounded-2xl px-5 py-4 shadow-[4px_4px_0_rgba(0,0,0,0.08)] dark:shadow-[4px_4px_0_rgba(0,0,0,0.4)]">
+            <p className="text-foreground text-sm sm:text-base font-medium">What makes them remember a brand?</p>
+          </div>
+          <div className="floating-bubble absolute bottom-[12%] right-[8%] sm:right-[10%] max-w-[220px] sm:max-w-[260px] gradient-purple border-2 border-foreground dark:border-[#333] rounded-2xl px-5 py-4 shadow-[6px_6px_0_rgba(0,0,0,0.12)] dark:shadow-[6px_6px_0_rgba(0,0,0,0.6)]">
+            <p className="text-primary-foreground text-sm sm:text-base font-bold">What makes attention turn into growth?</p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Continue Story ── */}
+      <section className="py-[12vh] px-[5vw]">
+        <div className="max-w-[700px] mx-auto space-y-16">
 
           <div className="reveal-section">
             <p className="text-primary text-xl sm:text-2xl font-display font-bold">
