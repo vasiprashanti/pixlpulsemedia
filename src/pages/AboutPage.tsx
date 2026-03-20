@@ -19,8 +19,7 @@ const AboutPage = () => {
     const ctx = gsap.context(() => {
       // Hero title
       gsap.from(".about-hero-title", { opacity: 0, y: 60, duration: 1, delay: 0.3 });
-      gsap.from(".about-hero-sub", { opacity: 0, y: 40, duration: 1, delay: 0.6 });
-      gsap.from(".about-scroll-indicator", { opacity: 0, duration: 1, delay: 1.2 });
+      gsap.from(".about-scroll-indicator", { opacity: 0, duration: 1, delay: 0.8 });
 
       // All reveal sections
       gsap.utils.toArray<HTMLElement>(".reveal-section").forEach((el) => {
@@ -85,25 +84,25 @@ const AboutPage = () => {
       });
 
       // Pillar cards — falling from above with bounce
-      gsap.set(".pillar-card", { opacity: 0, y: -100 });
+      gsap.set(".pillar-card", { opacity: 0, y: -80 });
       ScrollTrigger.create({
         trigger: ".pillars-grid",
-        start: "top 85%",
+        start: "top 90%",
         onEnter: () => {
           gsap.to(".pillar-card", {
             opacity: 1,
             y: 0,
-            stagger: 0.15,
-            duration: 0.7,
+            stagger: 0.12,
+            duration: 0.9,
             ease: "bounce.out",
           });
         },
         onLeaveBack: () => {
           gsap.to(".pillar-card", {
             opacity: 0,
-            y: -100,
-            stagger: 0.1,
-            duration: 0.4,
+            y: -80,
+            stagger: 0.08,
+            duration: 0.5,
             ease: "power2.in",
           });
         },
@@ -128,12 +127,9 @@ const AboutPage = () => {
 
       {/* ── Hero ── */}
       <section className="relative flex flex-col justify-center items-center min-h-screen px-[5vw] grid-bg">
-        <h1 className="about-hero-title font-display text-[2.5rem] sm:text-[3.5rem] lg:text-[4.5rem] font-bold leading-[1.15] text-center max-w-[900px]">
-          About <span className="text-primary">PixelPulse</span> Media
+        <h1 className="about-hero-title font-display text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.15] text-center">
+          Pixel<span className="text-primary">Pulse</span> Media
         </h1>
-        <p className="about-hero-sub text-muted-foreground text-lg sm:text-xl mt-6 text-center max-w-[600px]">
-          Once upon an idea… PixelPulse was born.
-        </p>
         <div className="about-scroll-indicator absolute bottom-[6vh] animate-bounce">
           <ChevronDown className="w-6 h-6 text-muted-foreground" />
         </div>
@@ -194,23 +190,20 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* ── Insight Moment ── */}
-      <section className="min-h-[60vh] flex items-center justify-center px-[5vw] grid-bg">
-        <h2 className="insight-text font-display text-[2.5rem] sm:text-[3rem] lg:text-[4rem] font-bold text-center text-primary leading-[1.1] whitespace-nowrap">
-          Attention drives everything.
-        </h2>
-      </section>
+      {/* ── Insight Moment + We Combine ── */}
+      <section className="py-[12vh] px-[5vw] grid-bg">
+        <div className="max-w-[800px] mx-auto text-center">
+          <h2 className="insight-text font-display text-[clamp(1.8rem,5vw,4rem)] font-bold text-primary leading-[1.1]">
+            Attention drives everything.
+          </h2>
 
-      {/* ── Brand Philosophy + We Combine ── */}
-      <section className="py-[12vh] px-[5vw]">
-        <div className="max-w-[800px] mx-auto text-center space-y-8">
-          <div className="reveal-section">
+          <div className="reveal-section mt-6">
             <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
               But how can your brand drive the attention it deserves? We don't just market brands — we understand the psychology behind why customers choose one brand or service over others.
             </p>
           </div>
 
-          <h2 className="text-primary text-[2.5rem] lg:text-[3.5rem] font-bold font-display">
+          <h2 className="text-primary text-[2.5rem] lg:text-[3.5rem] font-bold font-display mt-10">
             We combine
           </h2>
         </div>
