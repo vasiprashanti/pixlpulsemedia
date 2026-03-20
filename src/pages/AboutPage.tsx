@@ -62,12 +62,20 @@ const AboutPage = () => {
       });
 
       // Pillar cards
-      gsap.from(".pillar-card", {
-        scrollTrigger: { trigger: ".pillars-grid", start: "top 80%" },
-        opacity: 0,
-        y: 40,
-        stagger: 0.12,
-        duration: 0.6,
+      gsap.set(".pillar-card", { opacity: 0, y: 40 });
+      ScrollTrigger.create({
+        trigger: ".pillars-grid",
+        start: "top 85%",
+        onEnter: () => {
+          gsap.to(".pillar-card", {
+            opacity: 1,
+            y: 0,
+            stagger: 0.15,
+            duration: 0.6,
+            ease: "power2.out",
+          });
+        },
+        once: true,
       });
 
       // Ending vision
