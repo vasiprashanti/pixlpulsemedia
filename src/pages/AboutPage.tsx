@@ -190,23 +190,20 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* ── Insight Moment ── */}
-      <section className="min-h-[60vh] flex items-center justify-center px-[5vw] grid-bg">
-        <h2 className="insight-text font-display text-[2.5rem] sm:text-[3rem] lg:text-[4rem] font-bold text-center text-primary leading-[1.1] whitespace-nowrap">
-          Attention drives everything.
-        </h2>
-      </section>
+      {/* ── Insight Moment + We Combine ── */}
+      <section className="py-[12vh] px-[5vw] grid-bg">
+        <div className="max-w-[800px] mx-auto text-center">
+          <h2 className="insight-text font-display text-[clamp(1.8rem,5vw,4rem)] font-bold text-primary leading-[1.1]">
+            Attention drives everything.
+          </h2>
 
-      {/* ── Brand Philosophy + We Combine ── */}
-      <section className="py-[12vh] px-[5vw]">
-        <div className="max-w-[800px] mx-auto text-center space-y-8">
-          <div className="reveal-section">
+          <div className="reveal-section mt-6">
             <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
               But how can your brand drive the attention it deserves? We don't just market brands — we understand the psychology behind why customers choose one brand or service over others.
             </p>
           </div>
 
-          <h2 className="text-primary text-[2.5rem] lg:text-[3.5rem] font-bold font-display">
+          <h2 className="text-primary text-[2.5rem] lg:text-[3.5rem] font-bold font-display mt-10">
             We combine
           </h2>
         </div>
