@@ -127,9 +127,12 @@ const AboutPage = () => {
 
       {/* ── Hero ── */}
       <section className="relative flex flex-col justify-center items-center min-h-screen px-[5vw] grid-bg">
-        <h1 className="about-hero-title font-display text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.15] text-center">
-          Pixel<span className="text-primary">Pulse</span> Media
-        </h1>
+        <div className="about-hero-title text-center">
+          <p className="font-sans text-base text-muted-foreground mb-2">Welcome to</p>
+          <h1 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.15]">
+            Pixl<span className="text-primary">Pulse</span> Media
+          </h1>
+        </div>
         <div className="about-scroll-indicator absolute bottom-[6vh] animate-bounce">
           <ChevronDown className="w-6 h-6 text-muted-foreground" />
         </div>
@@ -179,7 +182,7 @@ const AboutPage = () => {
       <section className="py-[12vh] px-[5vw] bg-section">
         <div className="max-w-[700px] mx-auto reveal-section space-y-6">
           <h2 className="font-display text-[2rem] sm:text-[3rem] font-bold text-primary leading-[1.15]">
-            That curiosity led to PixelPulse Media
+            That curiosity led to PixlPulse Media
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg italic">
             Fueled by creativity and constant learning
@@ -242,7 +245,7 @@ const AboutPage = () => {
 
           <div className="reveal-section border-l-2 border-primary pl-6">
             <p className="text-foreground text-base sm:text-lg leading-relaxed">
-              That's where we come in. PixelPulse helps businesses transform ideas into digital presence — the kind people <span className="font-semibold">notice</span>, <span className="font-semibold">remember</span>, and <span className="font-semibold">trust</span>.
+              That's where we come in. PixlPulse helps businesses transform ideas into digital presence — the kind people <span className="font-semibold">notice</span>, <span className="font-semibold">remember</span>, and <span className="font-semibold">trust</span>.
             </p>
           </div>
 
@@ -263,7 +266,7 @@ const AboutPage = () => {
       {/* ── Ending Vision ── */}
       <section className="vision-section min-h-[50vh] flex flex-col items-center justify-center px-[5vw] grid-bg">
         <p className="vision-line font-display text-2xl sm:text-3xl font-bold text-center">
-          Pixel<span className="text-primary">Pulse</span> Media
+          Pixl<span className="text-primary">Pulse</span> Media
         </p>
         <div className="vision-line w-16 h-[2px] bg-primary my-6" />
         <p className="vision-line text-muted-foreground text-lg sm:text-xl text-center">
