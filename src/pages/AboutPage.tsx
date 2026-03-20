@@ -84,8 +84,8 @@ const AboutPage = () => {
         scale: 0.85,
       });
 
-      // Pillar cards
-      gsap.set(".pillar-card", { opacity: 0, y: 40 });
+      // Pillar cards — falling from above with bounce
+      gsap.set(".pillar-card", { opacity: 0, y: -100 });
       ScrollTrigger.create({
         trigger: ".pillars-grid",
         start: "top 85%",
@@ -94,11 +94,19 @@ const AboutPage = () => {
             opacity: 1,
             y: 0,
             stagger: 0.15,
-            duration: 0.6,
-            ease: "power2.out",
+            duration: 0.7,
+            ease: "bounce.out",
           });
         },
-        once: true,
+        onLeaveBack: () => {
+          gsap.to(".pillar-card", {
+            opacity: 0,
+            y: -100,
+            stagger: 0.1,
+            duration: 0.4,
+            ease: "power2.in",
+          });
+        },
       });
 
       // Ending vision
@@ -188,36 +196,32 @@ const AboutPage = () => {
 
       {/* ── Insight Moment ── */}
       <section className="min-h-[60vh] flex items-center justify-center px-[5vw] grid-bg">
-        <h2 className="insight-text font-display text-[2.5rem] sm:text-[4rem] lg:text-[5rem] font-bold text-center text-primary leading-[1.1]">
-          Attention drives<br />everything.
+        <h2 className="insight-text font-display text-[2.5rem] sm:text-[3rem] lg:text-[4rem] font-bold text-center text-primary leading-[1.1] whitespace-nowrap">
+          Attention drives everything.
         </h2>
       </section>
 
-      {/* ── Brand Philosophy ── */}
+      {/* ── Brand Philosophy + We Combine ── */}
       <section className="py-[12vh] px-[5vw]">
-        <div className="max-w-[700px] mx-auto space-y-12">
+        <div className="max-w-[800px] mx-auto text-center space-y-8">
           <div className="reveal-section">
-            <p className="text-foreground text-xl sm:text-2xl font-display font-bold">
-              But PixelPulse isn't just about marketing.
-            </p>
-            <p className="text-muted-foreground text-base sm:text-lg mt-4 leading-relaxed">
-              It's about understanding the psychology behind why people engage with brands.
+            <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
+              But how can your brand drive the attention it deserves? We don't just market brands — we understand the psychology behind why customers choose one brand or service over others.
             </p>
           </div>
 
+          <h2 className="text-primary text-[2.5rem] lg:text-[3.5rem] font-bold font-display">
+            We combine
+          </h2>
         </div>
 
-        {/* We Combine Grid — matches Plans card styling */}
-        <h2 className="text-primary text-[2.5rem] lg:text-[3.5rem] font-bold font-display text-left max-w-[900px] mx-auto mb-[60px] mt-4">
-          We combine
-        </h2>
-        <div className="pillars-grid max-w-[900px] mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-10">
+        <div className="pillars-grid max-w-[900px] mx-auto flex flex-col sm:flex-row gap-6 lg:gap-8 mt-12">
           {pillars.map((title) => (
             <div
               key={title}
-              className="pillar-card flex items-center justify-center bg-card p-9 border-2 border-foreground dark:border-[#333] shadow-[8px_8px_0_rgba(0,0,0,0.12)] dark:shadow-[8px_8px_0_rgba(0,0,0,0.6)] transition-all duration-300 hover:-translate-y-[6px] hover:shadow-[12px_12px_0_rgba(0,0,0,0.15)] dark:hover:shadow-[12px_12px_0_rgba(0,0,0,0.8)]"
+              className="pillar-card flex-1 flex items-center justify-center bg-card p-8 border-2 border-foreground dark:border-[#333] shadow-[8px_8px_0_rgba(0,0,0,0.12)] dark:shadow-[8px_8px_0_rgba(0,0,0,0.6)] transition-all duration-300 hover:-translate-y-[6px] hover:shadow-[12px_12px_0_rgba(0,0,0,0.15)] dark:hover:shadow-[12px_12px_0_rgba(0,0,0,0.8)]"
             >
-              <h3 className="text-primary text-[1.4rem] font-display font-bold text-center">
+              <h3 className="text-primary text-[1.2rem] sm:text-[1.3rem] font-display font-bold text-center">
                 {title}
               </h3>
             </div>
@@ -225,7 +229,7 @@ const AboutPage = () => {
         </div>
 
         <div className="max-w-[700px] mx-auto mt-12 reveal-section">
-          <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
+          <p className="text-muted-foreground text-base sm:text-lg leading-relaxed text-center">
             to help brands stand out in a crowded digital world.
           </p>
         </div>
