@@ -44,14 +44,37 @@ const AboutPage = () => {
         });
       });
 
-      // Chat bubbles — each reveals individually on scroll
-      gsap.utils.toArray<HTMLElement>(".chat-bubble").forEach((bubble) => {
-        gsap.from(bubble, {
-          scrollTrigger: { trigger: bubble, start: "top 88%" },
-          opacity: 0,
-          y: 30,
-          duration: 0.5,
-        });
+      // Curiosity section heading
+      gsap.from(".curiosity-heading", {
+        scrollTrigger: { trigger: ".curiosity-section", start: "top 60%" },
+        opacity: 0,
+        y: 40,
+        duration: 0.8,
+      });
+      gsap.from(".curiosity-sub", {
+        scrollTrigger: { trigger: ".curiosity-section", start: "top 55%" },
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        delay: 0.3,
+      });
+
+      // Floating chat bubbles — staggered pop-in
+      gsap.set(".floating-bubble", { opacity: 0, y: 80, scale: 0.8 });
+      ScrollTrigger.create({
+        trigger: ".curiosity-section",
+        start: "top 40%",
+        onEnter: () => {
+          gsap.to(".floating-bubble", {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            stagger: 0.35,
+            duration: 0.6,
+            ease: "back.out(1.4)",
+          });
+        },
+        once: true,
       });
 
       // Big insight text
