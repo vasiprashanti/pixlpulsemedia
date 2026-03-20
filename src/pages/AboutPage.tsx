@@ -84,25 +84,25 @@ const AboutPage = () => {
       });
 
       // Pillar cards — falling from above with bounce
-      gsap.set(".pillar-card", { opacity: 0, y: -100 });
+      gsap.set(".pillar-card", { opacity: 0, y: -80 });
       ScrollTrigger.create({
         trigger: ".pillars-grid",
-        start: "top 85%",
+        start: "top 90%",
         onEnter: () => {
           gsap.to(".pillar-card", {
             opacity: 1,
             y: 0,
-            stagger: 0.15,
-            duration: 0.7,
+            stagger: 0.12,
+            duration: 0.9,
             ease: "bounce.out",
           });
         },
         onLeaveBack: () => {
           gsap.to(".pillar-card", {
             opacity: 0,
-            y: -100,
-            stagger: 0.1,
-            duration: 0.4,
+            y: -80,
+            stagger: 0.08,
+            duration: 0.5,
             ease: "power2.in",
           });
         },
