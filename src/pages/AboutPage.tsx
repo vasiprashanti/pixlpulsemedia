@@ -182,7 +182,7 @@ const AboutPage = () => {
       <section className="py-[12vh] px-[5vw] bg-section">
         <div className="max-w-[700px] mx-auto reveal-section space-y-6">
           <h2 className="font-display text-[2rem] sm:text-[3rem] font-bold text-primary leading-[1.15]">
-            That curiosity led to PixelPulse Media
+            That curiosity led to PixlPulse Media
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg italic">
             Fueled by creativity and constant learning
