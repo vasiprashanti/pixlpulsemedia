@@ -19,8 +19,7 @@ const AboutPage = () => {
     const ctx = gsap.context(() => {
       // Hero title
       gsap.from(".about-hero-title", { opacity: 0, y: 60, duration: 1, delay: 0.3 });
-      gsap.from(".about-hero-sub", { opacity: 0, y: 40, duration: 1, delay: 0.6 });
-      gsap.from(".about-scroll-indicator", { opacity: 0, duration: 1, delay: 1.2 });
+      gsap.from(".about-scroll-indicator", { opacity: 0, duration: 1, delay: 0.8 });
 
       // All reveal sections
       gsap.utils.toArray<HTMLElement>(".reveal-section").forEach((el) => {
