@@ -245,7 +245,7 @@ const AboutPage = () => {
 
           <div className="reveal-section border-l-2 border-primary pl-6">
             <p className="text-foreground text-base sm:text-lg leading-relaxed">
-              That's where we come in. PixelPulse helps businesses transform ideas into digital presence — the kind people <span className="font-semibold">notice</span>, <span className="font-semibold">remember</span>, and <span className="font-semibold">trust</span>.
+              That's where we come in. PixlPulse helps businesses transform ideas into digital presence — the kind people <span className="font-semibold">notice</span>, <span className="font-semibold">remember</span>, and <span className="font-semibold">trust</span>.
             </p>
           </div>
 
