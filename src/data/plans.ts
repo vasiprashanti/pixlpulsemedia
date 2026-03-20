@@ -29,7 +29,7 @@ export const plans: Plan[] = [
     ],
   },
   {
-    name: "Pro Pack",
+    name: "Pro",
     description: "For businesses that want serious growth.",
     features: [
       "Everything in Growth Pack",
