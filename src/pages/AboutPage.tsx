@@ -127,9 +127,12 @@ const AboutPage = () => {
 
       {/* ── Hero ── */}
       <section className="relative flex flex-col justify-center items-center min-h-screen px-[5vw] grid-bg">
-        <h1 className="about-hero-title font-display text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.15] text-center">
-          Pixel<span className="text-primary">Pulse</span> Media
-        </h1>
+        <div className="about-hero-title text-center">
+          <p className="font-sans text-base text-muted-foreground mb-2">Welcome to</p>
+          <h1 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.15]">
+            Pixl<span className="text-primary">Pulse</span> Media
+          </h1>
+        </div>
         <div className="about-scroll-indicator absolute bottom-[6vh] animate-bounce">
           <ChevronDown className="w-6 h-6 text-muted-foreground" />
         </div>
