@@ -266,7 +266,7 @@ const AboutPage = () => {
       {/* ── Ending Vision ── */}
       <section className="vision-section min-h-[50vh] flex flex-col items-center justify-center px-[5vw] grid-bg">
         <p className="vision-line font-display text-2xl sm:text-3xl font-bold text-center">
-          Pixel<span className="text-primary">Pulse</span> Media
+          Pixl<span className="text-primary">Pulse</span> Media
         </p>
         <div className="vision-line w-16 h-[2px] bg-primary my-6" />
         <p className="vision-line text-muted-foreground text-lg sm:text-xl text-center">
