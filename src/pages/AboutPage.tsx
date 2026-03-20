@@ -84,8 +84,8 @@ const AboutPage = () => {
         scale: 0.85,
       });
 
-      // Pillar cards
-      gsap.set(".pillar-card", { opacity: 0, y: 40 });
+      // Pillar cards — falling from above with bounce
+      gsap.set(".pillar-card", { opacity: 0, y: -100 });
       ScrollTrigger.create({
         trigger: ".pillars-grid",
         start: "top 85%",
@@ -94,11 +94,19 @@ const AboutPage = () => {
             opacity: 1,
             y: 0,
             stagger: 0.15,
-            duration: 0.6,
-            ease: "power2.out",
+            duration: 0.7,
+            ease: "bounce.out",
           });
         },
-        once: true,
+        onLeaveBack: () => {
+          gsap.to(".pillar-card", {
+            opacity: 0,
+            y: -100,
+            stagger: 0.1,
+            duration: 0.4,
+            ease: "power2.in",
+          });
+        },
       });
 
       // Ending vision
