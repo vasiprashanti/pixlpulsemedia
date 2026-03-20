@@ -133,22 +133,13 @@ const AboutPage = () => {
 
       {/* ── Story Begins ── */}
       <section className="py-[12vh] px-[5vw]">
-        <div className="max-w-[700px] mx-auto space-y-16">
-          <div className="reveal-section">
-            <p className="text-foreground text-lg sm:text-xl leading-relaxed">
-              We're the PixelPulse team — a group of curious creators, marketers, and visual storytellers who noticed something interesting about brands online.
-            </p>
-          </div>
-
-          <div className="reveal-stagger space-y-3">
-            <p className="stagger-line text-foreground text-xl sm:text-2xl font-display font-bold">
-              Everyone was creating content.
-            </p>
-            <p className="stagger-line text-muted-foreground text-xl sm:text-2xl font-display">
-              But very few were actually building presence.
-            </p>
-          </div>
-
+        <div className="max-w-[700px] mx-auto text-center reveal-section">
+          <h2 className="font-display text-[2.5rem] sm:text-[3.5rem] font-bold text-foreground leading-[1.15] mb-6">
+            Hi There!
+          </h2>
+          <p className="text-muted-foreground text-lg sm:text-xl leading-relaxed">
+            We're a group of curious creators, marketers, and visual storytellers who noticed something interesting about brands online…
+          </p>
         </div>
       </section>
 
