@@ -127,12 +127,9 @@ const AboutPage = () => {
 
       {/* ── Hero ── */}
       <section className="relative flex flex-col justify-center items-center min-h-screen px-[5vw] grid-bg">
-        <h1 className="about-hero-title font-display text-[2.5rem] sm:text-[3.5rem] lg:text-[4.5rem] font-bold leading-[1.15] text-center max-w-[900px]">
-          About <span className="text-primary">PixelPulse</span> Media
+        <h1 className="about-hero-title font-display text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.15] text-center">
+          Pixel<span className="text-primary">Pulse</span> Media
         </h1>
-        <p className="about-hero-sub text-muted-foreground text-lg sm:text-xl mt-6 text-center max-w-[600px]">
-          Once upon an idea… PixelPulse was born.
-        </p>
         <div className="about-scroll-indicator absolute bottom-[6vh] animate-bounce">
           <ChevronDown className="w-6 h-6 text-muted-foreground" />
         </div>
