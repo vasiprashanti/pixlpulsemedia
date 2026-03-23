@@ -17,7 +17,7 @@ const PlansSection = () => {
         {plans.map((plan) => (
           <div
             key={plan.name}
-            className="flex-1 flex flex-col justify-between bg-card/90 p-9 border-2 border-foreground dark:border-[#333] shadow-[8px_8px_0_rgba(0,0,0,0.12)] dark:shadow-[8px_8px_0_rgba(0,0,0,0.6)] transition-all duration-300 hover:-translate-y-[6px] hover:shadow-[12px_12px_0_rgba(0,0,0,0.15)] dark:hover:shadow-[12px_12px_0_rgba(0,0,0,0.8)]"
+            className="flex-1 flex flex-col justify-between bg-card p-9 border-2 border-foreground dark:border-[#333] shadow-[8px_8px_0_rgba(0,0,0,0.12)] dark:shadow-[8px_8px_0_rgba(0,0,0,0.6)] transition-all duration-300 hover:-translate-y-[6px] hover:shadow-[12px_12px_0_rgba(0,0,0,0.15)] dark:hover:shadow-[12px_12px_0_rgba(0,0,0,0.8)]"
           >
             <div>
               <h3 className="text-primary text-[1.9rem] font-display font-bold mb-3.5 pb-2.5 border-b border-foreground/10 dark:border-[#333]">
