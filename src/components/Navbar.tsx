@@ -62,7 +62,7 @@ const Navbar = ({ onScrollTo }: NavbarProps) => {
           Get Started
         </a>
 
-        <button className="md:hidden text-2xl" onClick={() => setMobileOpen(!mobileOpen)}>
+        <button className="md:hidden text-2xl" onClick={() => setMobileOpen(!mobileOpen)} aria-label={mobileOpen ? "Close menu" : "Open menu"}>
           {mobileOpen ? <X /> : <Menu />}
         </button>
 

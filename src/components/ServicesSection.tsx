@@ -109,7 +109,7 @@ const ServicesSection = () => {
               ref={(el) => { itemRefs.current[i] = el; }}
               className="min-h-[80vh] md:min-h-[80vh] flex flex-col justify-center mb-[40px] md:mb-[100px] last:mb-0 service-item"
             >
-              <div className="w-full h-[38vh] md:h-[60vh] rounded-2xl overflow-hidden mb-[30px] group">
+              <div className="w-full h-[38vh] md:h-[60vh] rounded-2xl overflow-hidden mb-[15px] md:mb-[30px] group bg-card/90">
                 <img
                   src={s.image}
                   alt={s.title}

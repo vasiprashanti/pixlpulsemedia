@@ -42,13 +42,14 @@ const Footer = () => {
               ✉ pixelpulsemedia202@gmail.com
             </a>
             <div className="flex gap-3 mt-3">
-              {["Li", "IG"].map((s) => (
+              {[{ label: "Li", name: "LinkedIn" }, { label: "IG", name: "Instagram" }].map((s) => (
                 <a
-                  key={s}
+                  key={s.label}
                   href="#"
+                  aria-label={s.name}
                   className="w-8 h-8 flex items-center justify-center border border-[#444] rounded-md text-xs hover:border-primary hover:text-primary transition-colors"
                 >
-                  {s}
+                  {s.label}
                 </a>
               ))}
             </div>
