@@ -62,12 +62,12 @@ const Navbar = ({ onScrollTo }: NavbarProps) => {
           Get Started
         </a>
 
-        <button className="md:hidden text-2xl" onClick={() => setMobileOpen(!mobileOpen)}>
+        <button className="md:hidden text-2xl" onClick={() => setMobileOpen(!mobileOpen)} aria-label={mobileOpen ? "Close menu" : "Open menu"}>
           {mobileOpen ? <X /> : <Menu />}
         </button>
 
         {mobileOpen && (
-          <div className="absolute top-[8vh] right-[2vw] bg-card p-4 rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.1)] flex flex-col gap-3 md:hidden z-50">
+          <div className="absolute top-[8vh] right-[2.5vw] w-[95vw] bg-card p-4 rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.1)] flex flex-col gap-3 md:hidden z-50">
             <button onClick={handleServices} className="text-left hover:text-primary">
               Services
             </button>

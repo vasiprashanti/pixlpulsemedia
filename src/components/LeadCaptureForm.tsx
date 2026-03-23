@@ -39,7 +39,7 @@ const LeadCaptureForm = () => {
   };
 
   const inputClass =
-    "py-3 px-4 border-b border-foreground/10 dark:border-[#333] bg-transparent text-foreground outline-none focus:border-primary transition-all w-full";
+    "py-3 px-4 border-b border-foreground/10 dark:border-[#333] bg-transparent text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/30 transition-all w-full";
 
   if (submitted) {
     return (
@@ -69,8 +69,9 @@ const LeadCaptureForm = () => {
           className="bg-card p-9 border-2 border-foreground dark:border-[#333] shadow-[8px_8px_0_rgba(0,0,0,0.12)] dark:shadow-[8px_8px_0_rgba(0,0,0,0.6)] flex flex-col gap-5 transition-all duration-300 hover:-translate-y-[6px] hover:shadow-[12px_12px_0_rgba(0,0,0,0.15)] dark:hover:shadow-[12px_12px_0_rgba(0,0,0,0.8)]"
         >
           <div className="flex flex-col">
-            <label className="text-sm font-semibold mb-2">Name *</label>
+            <label htmlFor="lead-name" className="text-sm font-semibold mb-2">Name *</label>
             <input
+              id="lead-name"
               type="text"
               required
               maxLength={100}
@@ -81,8 +82,9 @@ const LeadCaptureForm = () => {
           </div>
 
           <div className="flex flex-col">
-            <label className="text-sm font-semibold mb-2">Mobile Number *</label>
+            <label htmlFor="lead-mobile" className="text-sm font-semibold mb-2">Mobile Number *</label>
             <input
+              id="lead-mobile"
               type="tel"
               required
               maxLength={15}
@@ -93,8 +95,9 @@ const LeadCaptureForm = () => {
           </div>
 
           <div className="flex flex-col">
-            <label className="text-sm font-semibold mb-2">Business Name *</label>
+            <label htmlFor="lead-business" className="text-sm font-semibold mb-2">Business Name *</label>
             <input
+              id="lead-business"
               type="text"
               required
               maxLength={100}
@@ -105,8 +108,9 @@ const LeadCaptureForm = () => {
           </div>
 
           <div className="flex flex-col">
-            <label className="text-sm font-semibold mb-2">Business Email (optional)</label>
+            <label htmlFor="lead-email" className="text-sm font-semibold mb-2">Business Email (optional)</label>
             <input
+              id="lead-email"
               type="email"
               maxLength={255}
               placeholder="you@company.com"
@@ -117,8 +121,9 @@ const LeadCaptureForm = () => {
           </div>
 
           <div className="flex flex-col">
-            <label className="text-sm font-semibold mb-2">Website (optional)</label>
+            <label htmlFor="lead-website" className="text-sm font-semibold mb-2">Website (optional)</label>
             <input
+              id="lead-website"
               type="url"
               maxLength={255}
               value={formData.website}
@@ -128,8 +133,9 @@ const LeadCaptureForm = () => {
           </div>
 
           <div className="flex flex-col">
-            <label className="text-sm font-semibold mb-2">Monthly marketing budget (INR)</label>
+            <label htmlFor="lead-budget" className="text-sm font-semibold mb-2">Monthly marketing budget (INR)</label>
             <select
+              id="lead-budget"
               value={formData.budget}
               onChange={(e) => handleChange("budget", e.target.value)}
               className={inputClass}
@@ -146,7 +152,7 @@ const LeadCaptureForm = () => {
           <button
             type="submit"
             disabled={loading}
-            className="self-start py-2.5 px-[18px] bg-primary text-primary-foreground font-semibold text-[15px] transition-all hover:brightness-110 border-none cursor-pointer disabled:opacity-50"
+            className="self-start py-2.5 px-[18px] bg-primary text-primary-foreground font-semibold text-[15px] transition-all hover:brightness-110 focus:ring-2 focus:ring-primary/50 focus:outline-none border-none cursor-pointer disabled:opacity-50"
           >
             {loading ? "Sending..." : "Request a Callback →"}
           </button>

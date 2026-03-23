@@ -4,7 +4,7 @@ const Marquee = () => {
   const items = [...marqueeItems, ...marqueeItems];
 
   return (
-    <div className="w-full h-[10vh] overflow-hidden gradient-purple flex items-center">
+    <div className="w-full h-[7vh] overflow-hidden gradient-purple flex items-center">
       <div
         className="flex whitespace-nowrap"
         style={{ animation: "marqueeSmooth 15s linear infinite" }}
