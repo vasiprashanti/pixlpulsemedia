@@ -34,7 +34,7 @@ Preferred time: ${time}
 
 Can you confirm availability?`;
 
-    const whatsappURL = `https://wa.me/917013695672?text=${encodeURIComponent(message)}`;
+    const whatsappURL = `https://wa.me/919347925278?text=${encodeURIComponent(message)}`;
 
     window.open(whatsappURL, "_blank", "noopener,noreferrer");
 
