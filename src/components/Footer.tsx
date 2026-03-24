@@ -35,11 +35,11 @@ const Footer = () => {
           {/* Contact */}
           <div>
             <h4 className="text-sm font-semibold mb-4 text-[#ccc]">Contact</h4>
-            <a href="tel:+919849151536" className="block text-sm mb-2 hover:text-[#fff] transition-colors">
-              📞 +91 98491 51536
+            <a href="tel:+919347925278" className="block text-sm mb-2 hover:text-[#fff] transition-colors">
+              📞 +91 93479 25278
             </a>
-            <a href="mailto:pixelpulsemedia202@gmail.com" className="block text-sm mb-3 hover:text-[#fff] transition-colors">
-              ✉ pixelpulsemedia202@gmail.com
+            <a href="mailto:info@pixlpulsemedia.com" className="block text-sm mb-3 hover:text-[#fff] transition-colors">
+              ✉ info@pixlpulsemedia.com
             </a>
             <div className="flex gap-3 mt-3">
               {["Li", "IG"].map((s) => (

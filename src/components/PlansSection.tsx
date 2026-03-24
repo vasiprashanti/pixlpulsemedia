@@ -5,7 +5,7 @@ const PlansSection = () => {
     const message = encodeURIComponent(
       `Hi, I wanted to know about your ${planName} plan.`
     );
-    window.open(`https://wa.me/919849151536?text=${message}`, "_blank");
+    window.open(`https://wa.me/919347925278?text=${message}`, "_blank");
   };
 
   return (
